@@ -11,7 +11,76 @@
             box-sizing: border-box;
         }
 
-        nav {
+        .hidden {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+#menuknap {
+    position: absolute;
+    display: inline-block;
+    top: 1vw;
+    left: 95vw;
+    font-size: 25px;
+    color: #FFA515;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#menu {
+    position: absolute;
+    transform-origin: top right;
+    z-index: 2;
+    text-align: right;
+    transition: transform 0.3s;
+    list-style: none;
+    top: 4vw;
+    left: 74vw;
+    cursor: pointer;
+}
+        li {
+    padding-bottom: 0vw;
+            font-family: 'Montserrat', sans-serif;
+}
+
+a:link {
+    color: #fca838;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:visited {
+    color: #fca838;
+}
+
+a:hover:hover {
+    color: black;
+}
+
+a:active {
+    color: black;
+}
+
+        nav.top {
+            background-color: rgba(255, 255, 255, 0.9);
+            position: fixed;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            margin: -11px;
+            padding: 7px;
+
+        }
+
+        nav.top img {
+            float: left;
+            width: 9%;
+            margin: 5px 0 0 15px;
+            position: relative;
+            top: -6px;
+        }
+
+        nav.data {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -29,6 +98,7 @@
             border-radius: 30px;
             border: 1px solid;
             padding: 8px;
+            font-size: 13px;
         }
 
         main {
@@ -38,6 +108,7 @@
         }
 
         h1 {
+
             margin: 10px 30px 0 30px;
             border-bottom: 1px solid black;
         }
@@ -49,6 +120,8 @@
         .splash {
             margin-top: 20px;
             width: 100%;
+            z-index: 2;
+            position: relative;
         }
 
         article {
@@ -78,21 +151,70 @@
             background-color: rgba(255, 255, 255, 0.8);
         }
 
+        .valgt {
+            background-color: #FFA515;
+            color: white;
+        }
 
-        @media (min-width:800px) {
+        @media (min-width: 800px) {
             .splash {
                 width: 50%;
-                margin-top: 30px;
+                margin-top: -8px;
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
+                padding-top: 18px;
+                z-index: 2;
+                position: relative;
             }
+
+            nav.top {
+                text-align: right;
+                background-color: rgba(255, 255, 255, 0.9);
+                position: fixed;
+                left: 0;
+                right: 0;
+                z-index: 1;
+                margin: -11px;
+                padding: 7px;
+
+            }
+
+            nav.top img {
+                float: left;
+                width: 4%;
+                margin: 0 0 0 15px;
+                position: relative;
+                top: -35px;
+            }
+
+            nav.top a {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 20px;
+                text-decoration: none;
+                color: orange;
+                padding: 15px;
+                position: relative;
+                top: 42px;
+            }
+
+            #menu {
+                list-style: none;
+                flex-direction: row;
+                display: flex;
+                float: right;
+                margin-top: -60px;
+            }
+             #menuknap {
+        display: none;
+    }
+
+    #menu.hidden {
+        transform: translateX(0);
+        opacity: 1;
+    }
         }
 
-        .valgt {
-            background-color: black;
-            color: white;
-        }
 
     </style>
 
@@ -100,8 +222,17 @@
 
 <body>
     <header>
+        <nav class="top">
+            <a href="bistro_babuskha1.html"><img src="Logo.png" alt="logo"></a>
+            <div id="menuknap">☰</div>
+            <ul id="menu" class="hidden">
+                <li> <a href="#">Menu</a></li>
+                <li><a href="#">Om retterne</a></li>
+                <li><a href="#">Bestil bord</a></li>
+            </ul>
+        </nav>
         <img src="babuskhaColor.png" alt="splash" class="splash">
-        <nav>
+        <nav class="data">
             <button data-kategori="alle" class="valgt">Alle</button>
             <button data-kategori="forretter">Forretter</button>
             <button data-kategori="hovedretter">Hovedretter</button>
@@ -120,12 +251,36 @@
             <img src="" alt="" class="billede">
             <h2 class="navn"></h2>
             <p class="kortbeskrivelse"></p>
-             <p class="pris"></p>
+            <p class="pris"></p>
 
         </article>
     </template>
 
     <script>
+        window.addEventListener("load", sidenVises);
+
+function sidenVises() {
+    console.log("sidenVises");
+
+    document.querySelector("#menuknap").addEventListener("click", toggleMenu);
+}
+
+function toggleMenu() {
+    console.log("toggleMenu")
+
+    document.querySelector("#menu").classList.toggle("hidden");
+
+    let erSkjult = document.querySelector("#menu").classList.contains("hidden");
+
+    if (erSkjult == true) {
+        document.querySelector("#menuknap").textContent = "☰";
+    } else {
+        document.querySelector("#menuknap").textContent = "x";
+    }
+}
+
+
+
         const header = document.querySelector("header h1");
 
         const url = "https://babushka-dd8a.restdb.io/rest/menu";
