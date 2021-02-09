@@ -11,6 +11,82 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .hidden {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+
+        #menuknap {
+            position: absolute;
+            display: inline-block;
+            top: 1vw;
+            left: 95vw;
+            font-size: 25px;
+            color: #FFA515;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        #menu {
+            position: absolute;
+            transform-origin: top right;
+            z-index: 2;
+            text-align: right;
+            transition: transform 0.3s;
+            list-style: none;
+            top: 4vw;
+            left: 74vw;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        li {
+            padding-bottom: 0vw;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        a:link {
+            color: #fca838;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        a:visited {
+            color: #fca838;
+        }
+
+        a:hover:hover {
+            color: black;
+        }
+
+        a:active {
+            color: black;
+        }
+
+        nav.top {
+            background-color: rgba(255, 255, 255, 0.9);
+            position: fixed;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            margin: -11px;
+            padding: 7px;
+
+        }
+
+        nav.top img {
+            float: left;
+            width: 9%;
+            margin: 5px 0 0 15px;
+            position: relative;
+            top: -6px;
+        }
+
+
         img {
             width: 100%
         }
@@ -23,8 +99,10 @@
         }
 
         .splash {
-            display: block;
-            margin: 30px auto 30px auto;
+            margin-top: 20px;
+            width: 100%;
+            z-index: 2;
+            position: relative;
         }
 
         .billede {
@@ -84,14 +162,79 @@
         @media (min-width: 800px) {
             .splash {
                 width: 50%;
+                margin-top: -8px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 18px;
+                z-index: 2;
+                position: relative;
+            }
+
+            nav.top {
+                text-align: right;
+                background-color: rgba(255, 255, 255, 0.9);
+                position: fixed;
+                left: 0;
+                right: 0;
+                z-index: 1;
+                margin: -11px;
+                padding: 7px;
+
+            }
+
+            nav.top img {
+                float: left;
+                width: 4%;
+                margin: 0 0 0 15px;
+                position: relative;
+                top: -28px;
+            }
+
+            nav.top a {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 20px;
+                text-decoration: none;
+                color: orange;
+                padding: 0px 20px 0 0px;
+                position: relative;
+                top: 33px;
+            }
+
+            #menu {
+                list-style: none;
+                flex-direction: row;
+                display: flex;
+                float: right;
+                margin-top: -60px;
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            #menuknap {
+                display: none;
+            }
+
+            #menu.hidden {
+                transform: translateX(0);
+                opacity: 1;
             }
         }
+
     </style>
 
 </head>
 
 <body>
     <header>
+        <nav class="top">
+            <a href="bistro_babuskha1.html"><img src="Logo.png" alt="logo"></a>
+            <div id="menuknap">☰</div>
+            <ul id="menu" class="hidden">
+                <li> <a href="bistro_babuskha1.html">Menu</a></li>
+                <li><a href="#">Om retterne</a></li>
+                <li><a href="#">Bestil bord</a></li>
+            </ul>
+        </nav>
         <img src="babuskhaColor.png" alt="splash" class="splash">
     </header>
 
@@ -112,6 +255,32 @@
         <button>Tilbage til menu</button>
 
         <script>
+            window.addEventListener("load", sidenVises);
+
+            function sidenVises() {
+                console.log("sidenVises");
+
+                document.querySelector("#menuknap").addEventListener("click", toggleMenu);
+            }
+
+            function toggleMenu() {
+                console.log("toggleMenu")
+
+                document.querySelector("#menu").classList.toggle("hidden");
+
+                let erSkjult = document.querySelector("#menu").classList.contains("hidden");
+
+                if (erSkjult == true) {
+                    document.querySelector("#menuknap").textContent = "☰";
+                } else {
+                    document.querySelector("#menuknap").textContent = "x";
+                }
+            }
+
+
+
+
+
             //new URLSearchParams fisker vores url-parametre ud af vores location string (window.location.search)
             const urlParams = new URLSearchParams(window.location.search);
             const id = urlParams.get("id");
@@ -150,5 +319,8 @@
                 //history = webapi for at komme baglængs, hvis vi kalder back kommer vi et hak tilbage i browserhistorien (dermed tilbage til 01-kald.html)
                 history.back();
             }
+
         </script>
-    </body></html>
+    </body>
+
+</html>

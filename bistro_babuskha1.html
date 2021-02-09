@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bistro Babuskha</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -12,54 +14,56 @@
         }
 
         .hidden {
-    opacity: 0;
-    transform: translateX(100%);
-}
+            opacity: 0;
+            transform: translateX(100%);
+        }
 
-#menuknap {
-    position: absolute;
-    display: inline-block;
-    top: 1vw;
-    left: 95vw;
-    font-size: 25px;
-    color: #FFA515;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-}
-
-#menu {
-    position: absolute;
-    transform-origin: top right;
-    z-index: 2;
-    text-align: right;
-    transition: transform 0.3s;
-    list-style: none;
-    top: 4vw;
-    left: 74vw;
-    cursor: pointer;
-}
-        li {
-    padding-bottom: 0vw;
+        #menuknap {
+            position: absolute;
+            display: inline-block;
+            top: 1vw;
+            left: 95vw;
+            font-size: 25px;
+            color: #FFA515;
+            cursor: pointer;
             font-family: 'Montserrat', sans-serif;
-}
+        }
 
-a:link {
-    color: #fca838;
-    text-decoration: none;
-    cursor: pointer;
-}
+        #menu {
+            position: absolute;
+            transform-origin: top right;
+            z-index: 2;
+            text-align: right;
+            transition: transform 0.3s;
+            list-style: none;
+            top: 4vw;
+            left: 74vw;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+        }
 
-a:visited {
-    color: #fca838;
-}
+        li {
+            padding-bottom: 0vw;
+            font-family: 'Montserrat', sans-serif;
+        }
 
-a:hover:hover {
-    color: black;
-}
+        a:link {
+            color: #fca838;
+            text-decoration: none;
+            cursor: pointer;
+        }
 
-a:active {
-    color: black;
-}
+        a:visited {
+            color: #fca838;
+        }
+
+        a:hover:hover {
+            color: black;
+        }
+
+        a:active {
+            color: black;
+        }
 
         nav.top {
             background-color: rgba(255, 255, 255, 0.9);
@@ -185,7 +189,7 @@ a:active {
                 width: 4%;
                 margin: 0 0 0 15px;
                 position: relative;
-                top: -35px;
+                top: -28px;
             }
 
             nav.top a {
@@ -193,9 +197,9 @@ a:active {
                 font-size: 20px;
                 text-decoration: none;
                 color: orange;
-                padding: 15px;
+                padding: 0px 20px 0 0px;
                 position: relative;
-                top: 42px;
+                top: 33px;
             }
 
             #menu {
@@ -204,17 +208,18 @@ a:active {
                 display: flex;
                 float: right;
                 margin-top: -60px;
+                font-family: 'Montserrat', sans-serif;
             }
-             #menuknap {
-        display: none;
-    }
 
-    #menu.hidden {
-        transform: translateX(0);
-        opacity: 1;
-    }
+            #menuknap {
+                display: none;
+            }
+
+            #menu.hidden {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
-
 
     </style>
 
@@ -226,7 +231,7 @@ a:active {
             <a href="bistro_babuskha1.html"><img src="Logo.png" alt="logo"></a>
             <div id="menuknap">☰</div>
             <ul id="menu" class="hidden">
-                <li> <a href="#">Menu</a></li>
+                <li> <a href="bistro_babuskha1.html">Menu</a></li>
                 <li><a href="#">Om retterne</a></li>
                 <li><a href="#">Bestil bord</a></li>
             </ul>
@@ -259,25 +264,25 @@ a:active {
     <script>
         window.addEventListener("load", sidenVises);
 
-function sidenVises() {
-    console.log("sidenVises");
+        function sidenVises() {
+            console.log("sidenVises");
 
-    document.querySelector("#menuknap").addEventListener("click", toggleMenu);
-}
+            document.querySelector("#menuknap").addEventListener("click", toggleMenu);
+        }
 
-function toggleMenu() {
-    console.log("toggleMenu")
+        function toggleMenu() {
+            console.log("toggleMenu")
 
-    document.querySelector("#menu").classList.toggle("hidden");
+            document.querySelector("#menu").classList.toggle("hidden");
 
-    let erSkjult = document.querySelector("#menu").classList.contains("hidden");
+            let erSkjult = document.querySelector("#menu").classList.contains("hidden");
 
-    if (erSkjult == true) {
-        document.querySelector("#menuknap").textContent = "☰";
-    } else {
-        document.querySelector("#menuknap").textContent = "x";
-    }
-}
+            if (erSkjult == true) {
+                document.querySelector("#menuknap").textContent = "☰";
+            } else {
+                document.querySelector("#menuknap").textContent = "x";
+            }
+        }
 
 
 
