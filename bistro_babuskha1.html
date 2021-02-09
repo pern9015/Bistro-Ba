@@ -18,8 +18,17 @@
             margin-top: 20px;
         }
 
+        nav button:hover {
+            border: 1px solid orange;
+            border-radius: 30px;
+        }
+
         button {
             margin: 0 5px;
+            background-color: white;
+            border-radius: 30px;
+            border: 1px solid;
+            padding: 8px;
         }
 
         main {
@@ -43,7 +52,7 @@
         }
 
         article {
-            margin: 10px;
+            margin: 15px;
             padding 10px;
             background-color: white;
         }
@@ -56,10 +65,19 @@
             transition: 1s;
         }
 
-        h2,
         p {
-            padding: 10px;
+            padding: 5px;
+            text-align: center;
         }
+
+        h2 {
+            padding: 8px;
+            text-align: center;
+            position: relative;
+            margin-top: -15%;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
 
         @media (min-width:800px) {
             .splash {
@@ -82,7 +100,7 @@
 
 <body>
     <header>
-        <img src="babuskha.png" alt="splash" class="splash">
+        <img src="babuskhaColor.png" alt="splash" class="splash">
         <nav>
             <button data-kategori="alle" class="valgt">Alle</button>
             <button data-kategori="forretter">Forretter</button>
@@ -102,7 +120,8 @@
             <img src="" alt="" class="billede">
             <h2 class="navn"></h2>
             <p class="kortbeskrivelse"></p>
-            <p class="pris"></p>
+             <p class="pris"></p>
+
         </article>
     </template>
 
@@ -127,7 +146,7 @@
         // første funktion der kaldes efter DOM er loaded
         function start() {
             const filterKnapper = document.querySelectorAll("nav button");
-            filterKnapper.forEach(knap => knap.addEventListener("click",filtrerRetter));
+            filterKnapper.forEach(knap => knap.addEventListener("click", filtrerRetter));
             loadJSON();
         }
         //eventlistener knyttet til knapperne der vælger hvad for et filter der er aktivt
@@ -166,9 +185,14 @@
                     klon.querySelector(".navn").textContent = ret.navn;
                     klon.querySelector(".kortbeskrivelse").textContent = ret.kortbeskrivelse;
                     klon.querySelector(".pris").textContent = ret.pris + ",-";
+                    klon.querySelector(".ret").addEventListener("click", () => visDetaljer(ret));
                     main.appendChild(klon);
                 }
             })
+        }
+
+        function visDetaljer(hvad) {
+            location.href = `02-detalje.html?id=${hvad._id}`;
         }
 
     </script>
