@@ -9,6 +9,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
 
     <style>
+        .logo:hover{
+           transform: scale(1.1);
+        }
+        .billede{
+            opacity: 1;
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+
+        }
+        .container:hover .billede{
+            opacity: 0.6;
+        }
+
+        article:hover{
+            transform: scale(1.1);
+        }
+
         * {
             box-sizing: border-box;
         }
@@ -66,7 +86,7 @@
         }
 
         nav.top {
-            background-color: rgba(255, 255, 255, 0.9);
+/*            background-color: rgba(255, 255, 255, 0.9);*/
             position: fixed;
             left: 0;
             right: 0;
@@ -78,10 +98,10 @@
 
         nav.top img {
             float: left;
-            width: 9%;
+            width: 10%;
             margin: 5px 0 0 15px;
             position: relative;
-            top: -6px;
+            top: -2px;
         }
 
         nav.data {
@@ -94,6 +114,8 @@
         nav button:hover {
             border: 1px solid orange;
             border-radius: 30px;
+            transform: scale(1.1);
+            transform: skewY(2deg);
         }
 
         button {
@@ -107,7 +129,7 @@
 
         main {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
             margin: 0 20px 0 20px;
         }
 
@@ -124,7 +146,7 @@
         .splash {
             margin-top: 20px;
             width: 100%;
-            z-index: 2;
+/*            z-index: 2;*/
             position: relative;
         }
 
@@ -145,6 +167,12 @@
         p {
             padding: 5px;
             text-align: center;
+            font-size: 18px;
+        }
+
+        p.pris {
+            color: orange;
+            font-size: 24px;
         }
 
         h2 {
@@ -161,6 +189,23 @@
         }
 
         @media (min-width: 800px) {
+
+            button{
+            text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+            }
+
+            h1 {
+
+                margin: 10px 165px 0 160px;
+            border-bottom: 1px solid black;
+        }
+            main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        margin: 0 150px 0 150px;
+}
+
             .splash {
                 width: 50%;
                 margin-top: -8px;
@@ -174,7 +219,7 @@
 
             nav.top {
                 text-align: right;
-                background-color: rgba(255, 255, 255, 0.9);
+/*                background-color: rgba(255, 255, 255, 0.9);*/
                 position: fixed;
                 left: 0;
                 right: 0;
@@ -186,10 +231,10 @@
 
             nav.top img {
                 float: left;
-                width: 4%;
+                width: 6%;
                 margin: 0 0 0 15px;
                 position: relative;
-                top: -28px;
+                top: 10px;
             }
 
             nav.top a {
@@ -199,7 +244,8 @@
                 color: orange;
                 padding: 0px 20px 0 0px;
                 position: relative;
-                top: 33px;
+                top: 0px;
+    left: 5px;
             }
 
             #menu {
@@ -207,8 +253,11 @@
                 flex-direction: row;
                 display: flex;
                 float: right;
-                margin-top: -60px;
+                margin-top: -48px;
                 font-family: 'Montserrat', sans-serif;
+                background-color: rgba(255, 255, 255, 0.9);
+                top: 4vw;
+    padding: 9px;
             }
 
             #menuknap {
@@ -228,7 +277,7 @@
 <body>
     <header>
         <nav class="top">
-            <a href="bistro_babuskha1.html"><img src="Logo.png" alt="logo"></a>
+            <a href="bistro_babuskha1.html"><img src="Logo2.png" alt="logo" class="logo"></a>
             <div id="menuknap">☰</div>
             <ul id="menu" class="hidden">
                 <li> <a href="bistro_babuskha1.html">Menu</a></li>
@@ -236,7 +285,7 @@
                 <li><a href="#">Bestil bord</a></li>
             </ul>
         </nav>
-        <img src="babuskhaColor.png" alt="splash" class="splash">
+        <img src="babuskhaColor2.png" alt="splash" class="splash">
         <nav class="data">
             <button data-kategori="alle" class="valgt">Alle</button>
             <button data-kategori="forretter">Forretter</button>
@@ -253,7 +302,9 @@
 
     <template>
         <article id="shadow" class="ret">
+           <div class="container">
             <img src="" alt="" class="billede">
+            </div>
             <h2 class="navn"></h2>
             <p class="kortbeskrivelse"></p>
             <p class="pris"></p>

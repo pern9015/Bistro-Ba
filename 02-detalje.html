@@ -15,6 +15,10 @@
             box-sizing: border-box;
         }
 
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
         .hidden {
             opacity: 0;
             transform: translateX(100%);
@@ -68,7 +72,7 @@
         }
 
         nav.top {
-            background-color: rgba(255, 255, 255, 0.9);
+            /*            background-color: rgba(255, 255, 255, 0.9);*/
             position: fixed;
             left: 0;
             right: 0;
@@ -80,12 +84,11 @@
 
         nav.top img {
             float: left;
-            width: 9%;
+            width: 10%;
             margin: 5px 0 0 15px;
             position: relative;
-            top: -6px;
+            top: -2px;
         }
-
 
         img {
             width: 100%
@@ -101,7 +104,7 @@
         .splash {
             margin-top: 20px;
             width: 100%;
-            z-index: 2;
+/*            z-index: 2;*/
             position: relative;
         }
 
@@ -173,7 +176,7 @@
 
             nav.top {
                 text-align: right;
-                background-color: rgba(255, 255, 255, 0.9);
+                /*                background-color: rgba(255, 255, 255, 0.9);*/
                 position: fixed;
                 left: 0;
                 right: 0;
@@ -185,10 +188,10 @@
 
             nav.top img {
                 float: left;
-                width: 4%;
+                width: 6%;
                 margin: 0 0 0 15px;
                 position: relative;
-                top: -28px;
+                top: 10px;
             }
 
             nav.top a {
@@ -198,7 +201,8 @@
                 color: orange;
                 padding: 0px 20px 0 0px;
                 position: relative;
-                top: 33px;
+                top: 0px;
+                left: 5px;
             }
 
             #menu {
@@ -206,8 +210,11 @@
                 flex-direction: row;
                 display: flex;
                 float: right;
-                margin-top: -60px;
+                margin-top: -48px;
                 font-family: 'Montserrat', sans-serif;
+                background-color: rgba(255, 255, 255, 0.9);
+                top: 4vw;
+                padding: 9px;
             }
 
             #menuknap {
@@ -219,7 +226,6 @@
                 opacity: 1;
             }
         }
-
     </style>
 
 </head>
@@ -227,7 +233,7 @@
 <body>
     <header>
         <nav class="top">
-            <a href="bistro_babuskha1.html"><img src="Logo.png" alt="logo"></a>
+            <a href="bistro_babuskha1.html"><img src="logo2.png" alt="logo" class="logo"></a>
             <div id="menuknap">☰</div>
             <ul id="menu" class="hidden">
                 <li> <a href="bistro_babuskha1.html">Menu</a></li>
@@ -235,7 +241,7 @@
                 <li><a href="#">Bestil bord</a></li>
             </ul>
         </nav>
-        <img src="babuskhaColor.png" alt="splash" class="splash">
+        <img src="babuskhaColor2.png" alt="splash" class="splash">
     </header>
 
     <body>
@@ -247,6 +253,7 @@
             <article>
                 <h2 class="navn"></h2>
                 <p class="kategori">Kategori:</p>
+                <p class="kortbeskrivelse"></p>
                 <p class="langbeskrivelse"></p>
                 <p class="oprindelsesregion">Oprindelsesregion:</p>
                 <p class="pris"></p>
@@ -308,6 +315,7 @@
                 document.querySelector(".billede").src = medieurl + ret.billede;
                 document.querySelector(".navn").textContent = ret.navn;
                 document.querySelector(".kategori").textContent += " " + ret.kategori;
+                document.querySelector(".kortbeskrivelse").textContent = ret.kortbeskrivelse;
                 document.querySelector(".langbeskrivelse").textContent = ret.langbeskrivelse;
                 document.querySelector(".oprindelsesregion").textContent += " " + ret.oprindelsesregion;
                 document.querySelector(".pris").textContent = ret.pris + ",-";
@@ -319,8 +327,5 @@
                 //history = webapi for at komme baglængs, hvis vi kalder back kommer vi et hak tilbage i browserhistorien (dermed tilbage til 01-kald.html)
                 history.back();
             }
-
         </script>
-    </body>
-
-</html>
+    </body></html>
