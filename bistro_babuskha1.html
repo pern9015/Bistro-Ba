@@ -10,8 +10,9 @@
 
     <style>
         html {
-  scroll-behavior: smooth;
-}
+            scroll-behavior: smooth;
+        }
+
         .logo:hover {
             transform: scale(1.1);
         }
@@ -59,7 +60,7 @@
         }
 
         #nyheder2 h2 {
-            padding 7px;
+            padding: 7px;
             text-transform: uppercase;
         }
 
@@ -223,7 +224,7 @@
 
         article {
             margin: 15px;
-            padding 10px;
+            padding: 10px;
             background-color: white;
         }
 
@@ -389,7 +390,7 @@
             }
 
             #nyheder2 h2 {
-                padding 7px;
+                padding: 7px;
                 text-transform: uppercase;
             }
 
@@ -441,10 +442,11 @@
 
             }
 
-            span img {
+            div img {
                 width: 6%;
             }
         }
+
     </style>
 
 </head>
@@ -494,26 +496,26 @@
         <img src="alyssa-kowalski-NCpE9rbYdec-unsplash.jpg" class="nyhed_img2" alt="slutbillede">
         <h2>Skriv dig op på vores venteliste</h2>
         <p>Restaurant Bistro Babuskha er en meget eftertragtet restaurant, hvor vores gæster serviceres på bedste vis</p>
-        <input name="email type=" text id="email" placeholder="Email">
+        <input name="email" type="text" id="email" placeholder="Email">
         <button id="submit">Bestil bord her</button>
     </div>
 
     <footer>
         <div id="footer">
             <div class="kontakt">
-                <span>
+                <div>
                     <img src="location.png" alt="kontakt">
                     <h3>Kontakt:</h3>
-                </span>
+                </div>
                 <p>Hans knudsens plads 1A</p>
                 <p>København Ø</p>
                 <p>tlf: +21866165</p>
             </div>
             <div class="kontakt">
-                <span>
+                <div>
                     <img src="place.png" alt="åbningstider">
                     <h3>Åbningstider</h3>
-                </span>
+                </div>
                 <p>Mandag - Fredag: 10.30 til 22.00</p>
                 <p>Lørdag: 12.00 til 23.00</p>
                 <p>Søndag: Lukket</p>
@@ -613,8 +615,11 @@
         function visDetaljer(hvad) {
             location.href = `02-detalje.html?id=${hvad._id}`;
         }
+
     </script>
 
 
 
-</body></html>
+</body>
+
+</html>
