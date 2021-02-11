@@ -104,7 +104,7 @@
         .splash {
             margin-top: 20px;
             width: 100%;
-/*            z-index: 2;*/
+            /*            z-index: 2;*/
             position: relative;
         }
 
@@ -145,9 +145,9 @@
         button {
             float: right;
             margin: -50px 40px 20px 0;
-            background-color: #FFA515;
+            background-color: orange;
             border-radius: 30px;
-            border: 1px solid #FFA515;
+            border: 1px solid orange;
             padding: 10px;
             font-size: 15px;
             color: white;
@@ -156,10 +156,14 @@
         }
 
         button:hover {
-            border: 1px solid #FFA515;
+            border: 1px solid orange;
             background-color: white;
             color: darkorange;
             border-radius: 30px;
+        }
+
+        footer {
+            display: none;
         }
 
         @media (min-width: 800px) {
@@ -225,6 +229,41 @@
                 transform: translateX(0);
                 opacity: 1;
             }
+
+            footer {
+                margin: 20px;
+                display: block;
+            }
+
+            #footer {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .kontakt {
+                margin: 0px 10px;
+                padding: 10px;
+                border: solid 1px #eaeaea;
+
+            }
+
+            #footer h3 {
+                text-transform: uppercase;
+                margin: -33px 0 15px 45px;
+            }
+
+            #footer p {
+                text-align: left;
+
+                text-align: left;
+                padding: 0;
+                margin: 5px 0 0 40px;
+
+            }
+
+            span img {
+                width: 6%;
+            }
         }
     </style>
 
@@ -260,6 +299,28 @@
             </article>
         </main>
         <button>Tilbage til menu</button>
+        <footer>
+            <div id="footer">
+                <div class="kontakt">
+                    <span>
+                        <img src="location.png" alt="kontakt">
+                        <h3>Kontakt:</h3>
+                    </span>
+                    <p>Hans knudsens plads 1A</p>
+                    <p>København Ø</p>
+                    <p>tlf: +21866165</p>
+                </div>
+                <div class="kontakt">
+                    <span>
+                        <img src="place.png" alt="åbningstider">
+                        <h3>Åbningstider</h3>
+                    </span>
+                    <p>Mandag - Fredag: 10.30 til 22.00</p>
+                    <p>Lørdag: 12.00 til 23.00</p>
+                    <p>Søndag: Lukket</p>
+                </div>
+            </div>
+        </footer>
 
         <script>
             window.addEventListener("load", sidenVises);

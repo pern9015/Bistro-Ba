@@ -9,63 +9,72 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
 
     <style>
-        .logo:hover{
-           transform: scale(1.1);
+        html {
+  scroll-behavior: smooth;
+}
+        .logo:hover {
+            transform: scale(1.1);
         }
 
-        .nyhed_img{
-                display: none;
-            }
-            #nyheder img {
-    margin: 0;
-    grid-column: 1/5;
-    grid-row: 1;
-}
+        .nyhed_img {
+            display: none;
+        }
 
-            #nyheder{
-    padding: 60px 300px;
-                height: 320px;
-                background-image: url(russiskRet.jpg);
-                background-attachment: fixed;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                margin-top: 20px;
-            }
-        .nyhed_img2{
-                display: none;
-            }
-            #nyheder2 img {
-    margin: 0;
-    grid-column: 1/5;
-    grid-row: 1;
-}
+        #nyheder img {
+            margin: 0;
+            grid-column: 1/5;
+            grid-row: 1;
+        }
 
-            #nyheder2{
+        #nyheder {
+            padding: 60px 300px;
+            height: 320px;
+            background-image: url(splash1.jpg);
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-top: 20px;
+        }
 
-                background-image: url(alyssa-kowalski-NCpE9rbYdec-unsplash.jpg);
-                background-attachment: fixed;
-                background-position: 0 270px;
-                background-repeat: no-repeat;
-                background-size: cover;
-                margin-top: 20px;
-                    padding: 120px 0px 480px 0px;
-            }
-        #nyheder2 h2{
+        .nyhed_img2 {
+            display: none;
+        }
+
+        #nyheder2 img {
+            margin: 0;
+            grid-column: 1/5;
+            grid-row: 1;
+        }
+
+        #nyheder2 {
+
+            background-image: url(alyssa-kowalski-NCpE9rbYdec-unsplash.jpg);
+            background-attachment: fixed;
+            background-position: 0 270px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-top: 20px;
+            padding: 120px 0px 480px 0px;
+        }
+
+        #nyheder2 h2 {
             padding 7px;
             text-transform: uppercase;
-            }
+        }
 
-        input#email{
+        input#email {
             margin: 0 9px 0 30px;
-    padding: 5px 110px 5px 0px;
-}
-        #submit{
+            padding: 5px 110px 5px 0px;
+        }
+
+        #submit {
             background-color: orange;
             color: white;
             border-color: orange;
         }
-        #submit:hover{
+
+        #submit:hover {
             background-color: white;
             color: orange;
             border-color: orange;
@@ -73,7 +82,7 @@
 
 
 
-        .billede{
+        .billede {
             opacity: 1;
             display: block;
             width: 100%;
@@ -82,11 +91,12 @@
             backface-visibility: hidden;
 
         }
-        .container:hover .billede{
+
+        .container:hover .billede {
             opacity: 0.6;
         }
 
-        article:hover{
+        article:hover {
             transform: scale(1.1);
         }
 
@@ -147,7 +157,7 @@
         }
 
         nav.top {
-/*            background-color: rgba(255, 255, 255, 0.9);*/
+            /*            background-color: rgba(255, 255, 255, 0.9);*/
             position: fixed;
             left: 0;
             right: 0;
@@ -207,7 +217,7 @@
         .splash {
             margin-top: 20px;
             width: 100%;
-/*            z-index: 2;*/
+            /*            z-index: 2;*/
             position: relative;
         }
 
@@ -249,23 +259,28 @@
             color: white;
         }
 
+        footer {
+            display: none;
+        }
+
         @media (min-width: 800px) {
 
-            button{
-            text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
+            button {
+                text-transform: uppercase;
+                font-family: 'Montserrat', sans-serif;
             }
 
             h1 {
 
                 margin: 10px 165px 0 160px;
-            border-bottom: 1px solid black;
-        }
+                border-bottom: 1px solid black;
+            }
+
             main {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        margin: 0 150px 0 150px;
-}
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                margin: 0 150px 0 150px;
+            }
 
             .splash {
                 width: 50%;
@@ -280,7 +295,7 @@
 
             nav.top {
                 text-align: right;
-/*                background-color: rgba(255, 255, 255, 0.9);*/
+                /*                background-color: rgba(255, 255, 255, 0.9);*/
                 position: fixed;
                 left: 0;
                 right: 0;
@@ -306,7 +321,7 @@
                 padding: 0px 20px 0 0px;
                 position: relative;
                 top: 0px;
-    left: 5px;
+                left: 5px;
             }
 
             #menu {
@@ -318,7 +333,7 @@
                 font-family: 'Montserrat', sans-serif;
                 background-color: rgba(255, 255, 255, 0.9);
                 top: 4vw;
-    padding: 9px;
+                padding: 9px;
             }
 
             #menuknap {
@@ -330,19 +345,20 @@
                 opacity: 1;
             }
 
-            .nyhed_img{
+            .nyhed_img {
                 display: none;
             }
-            #nyheder img {
-    margin: 0;
-    grid-column: 1/5;
-    grid-row: 1;
-}
 
-            #nyheder{
-    padding: 60px 300px;
+            #nyheder img {
+                margin: 0;
+                grid-column: 1/5;
+                grid-row: 1;
+            }
+
+            #nyheder {
+                padding: 60px 300px;
                 height: 320px;
-                background-image: url(russiskRet.jpg);
+                background-image: url(splash1.jpg);
                 background-attachment: fixed;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -350,17 +366,18 @@
                 margin-top: 20px;
             }
 
-               .nyhed_img2{
+            .nyhed_img2 {
                 display: none;
             }
-            #nyheder2 img {
-    margin: 0;
-    grid-column: 1/5;
-    grid-row: 1;
-}
 
-            #nyheder2{
-    padding: 60px 300px;
+            #nyheder2 img {
+                margin: 0;
+                grid-column: 1/5;
+                grid-row: 1;
+            }
+
+            #nyheder2 {
+                padding: 60px 300px;
                 height: 320px;
                 background-image: url(alyssa-kowalski-NCpE9rbYdec-unsplash.jpg);
                 background-attachment: fixed;
@@ -371,27 +388,63 @@
                 padding: 140px 130px 0 830px;
             }
 
-        #nyheder2 h2{
-            padding 7px;
-            text-transform: uppercase;
+            #nyheder2 h2 {
+                padding 7px;
+                text-transform: uppercase;
             }
-        input#email{
-            margin: 0 9px 0 30px;
-    padding: 5px 110px 5px 0px;
-}
-        #submit{
-            background-color: orange;
-            color: white;
-            border-color: orange;
-        }
-        #submit:hover{
-            background-color: white;
-            color: orange;
-            border-color: orange;
-        }
 
-   }
+            input#email {
+                margin: 0 9px 0 30px;
+                padding: 5px 110px 5px 0px;
+            }
 
+            #submit {
+                background-color: orange;
+                color: white;
+                border-color: orange;
+            }
+
+            #submit:hover {
+                background-color: white;
+                color: orange;
+                border-color: orange;
+            }
+
+            footer {
+                margin: 20px;
+                display: block;
+            }
+
+            #footer {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .kontakt {
+                margin: 0px 10px;
+                padding: 10px;
+                border: solid 1px #eaeaea;
+
+            }
+
+            #footer h3 {
+                text-transform: uppercase;
+                margin: -33px 0 15px 45px;
+            }
+
+            #footer p {
+                text-align: left;
+
+                text-align: left;
+                padding: 0;
+                margin: 5px 0 0 40px;
+
+            }
+
+            span img {
+                width: 6%;
+            }
+        }
     </style>
 
 </head>
@@ -402,16 +455,16 @@
             <a href="bistro_babuskha1.html"><img src="Logo2.png" alt="logo" class="logo"></a>
             <div id="menuknap">☰</div>
             <ul id="menu" class="hidden">
-                <li> <a href="bistro_babuskha1.html">Menu</a></li>
-                <li><a href="#">Om retterne</a></li>
-                <li><a href="#">Bestil bord</a></li>
+                <li> <a href="#data">Menu</a></li>
+                <li><a href="#liste">Om retterne</a></li>
+                <li><a href="#nyheder2">Bestil bord</a></li>
             </ul>
         </nav>
         <img src="babuskhaColor2.png" alt="splash" class="splash">
         <div id="nyheder">
-       <img src="russiskRet2.jpg" class="nyhed_img" alt="">
-   </div>
-        <nav class="data">
+            <img src="splash1.jpg" class="nyhed_img" alt="">
+        </div>
+        <nav id="data" class="data">
             <button data-kategori="alle" class="valgt">Alle</button>
             <button data-kategori="forretter">Forretter</button>
             <button data-kategori="hovedretter">Hovedretter</button>
@@ -427,8 +480,8 @@
 
     <template>
         <article id="shadow" class="ret">
-           <div class="container">
-            <img src="" alt="" class="billede">
+            <div class="container">
+                <img src="" alt="" class="billede">
             </div>
             <h2 class="navn"></h2>
             <p class="kortbeskrivelse"></p>
@@ -437,13 +490,36 @@
         </article>
     </template>
 
-   <div id="nyheder2">
-       <img src="alyssa-kowalski-NCpE9rbYdec-unsplash.jpg" class="nyhed_img2" alt="">
-       <h2>Skriv dig op på vores venteliste</h2>
-       <p>Restaurant Bistro Babuskha er en meget eftertragtet restaurant, hvor vores gæster serviceres på bedste vis</p>
-       <input name="email type="text id="email" placeholder="Email">
-       <button id="submit">Skriv dig op her</button>
-   </div>
+    <div id="nyheder2">
+        <img src="alyssa-kowalski-NCpE9rbYdec-unsplash.jpg" class="nyhed_img2" alt="">
+        <h2>Skriv dig op på vores venteliste</h2>
+        <p>Restaurant Bistro Babuskha er en meget eftertragtet restaurant, hvor vores gæster serviceres på bedste vis</p>
+        <input name="email type=" text id="email" placeholder="Email">
+        <button id="submit">Bestil bord her</button>
+    </div>
+
+    <footer>
+        <div id="footer">
+            <div class="kontakt">
+                <span>
+                    <img src="location.png" alt="kontakt">
+                    <h3>Kontakt:</h3>
+                </span>
+                <p>Hans knudsens plads 1A</p>
+                <p>København Ø</p>
+                <p>tlf: +21866165</p>
+            </div>
+            <div class="kontakt">
+                <span>
+                    <img src="place.png" alt="åbningstider">
+                    <h3>Åbningstider</h3>
+                </span>
+                <p>Mandag - Fredag: 10.30 til 22.00</p>
+                <p>Lørdag: 12.00 til 23.00</p>
+                <p>Søndag: Lukket</p>
+            </div>
+        </div>
+    </footer>
     <script>
         window.addEventListener("load", sidenVises);
 
@@ -537,11 +613,8 @@
         function visDetaljer(hvad) {
             location.href = `02-detalje.html?id=${hvad._id}`;
         }
-
     </script>
 
 
 
-</body>
-
-</html>
+</body></html>
